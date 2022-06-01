@@ -31,7 +31,7 @@ exports.getAllQuestion = (req, res) => {
 
 exports.blockMe = (req, res) => {
     var id = req.userId
-    User.updateOne({ _id: id }, { blocked: true }, function (err, user) {
+    User.updateOne({ _id: id }, { blocked: false }, function (err, user) {
         if (err) {
             console.log(err)
             res.status(500).json({ msg: "something went wrong!!" })
